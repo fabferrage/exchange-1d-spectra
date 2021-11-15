@@ -10,18 +10,7 @@ def compute_liouvillian(
     """
     Compute the Liouvillian matrix for the 1D exchange spectrum.
     """
-    pa = 1.0 - pb
-    kab = kex * pb
-    kba = kex * pa
 
-    wa_rads = 2.0 * np.pi * nu0 * wa
-    wb_rads = 2.0 * np.pi * nu0 * wb
-
-    L = np.zeros((2, 2), dtype=complex)
-    L[0, 0] = -r2a - kab + 1j * wa_rads
-    L[0, 1] = kba
-    L[1, 0] = kab
-    L[1, 1] = -r2b - kba + 1j * wb_rads
     return L
 
 
